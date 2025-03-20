@@ -1,3 +1,4 @@
+import 'package:dashboard/views/dash_board_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,11 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Dashboard',
-      home: Scaffold(
-        body: Center(
-          child: Text('Dashboard'),
-        ),
-      ),
+      home: DashBoardView(),
     );
   }
 }
