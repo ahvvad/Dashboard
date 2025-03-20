@@ -1,15 +1,21 @@
-
 import 'package:dashboard/models/drawer_item_model.dart';
 import 'package:dashboard/utils/app_images.dart';
 import 'package:dashboard/widgets/drawer_item.dart';
 import 'package:flutter/material.dart';
 
-class DrawerItemlistView extends StatelessWidget {
+class DrawerItemlistView extends StatefulWidget {
   const DrawerItemlistView({
     super.key,
   });
 
-  static List<DrawerItemModel> items = [
+  @override
+  State<DrawerItemlistView> createState() => _DrawerItemlistViewState();
+}
+
+class _DrawerItemlistViewState extends State<DrawerItemlistView> {
+  int activeIndex = 0;
+
+  final List<DrawerItemModel> items = [
     DrawerItemModel(
       title: 'Dashboard',
       image: Assets.imagesDashboard,
@@ -39,10 +45,20 @@ class DrawerItemlistView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: items.length,
       itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: DrawerItem(
-            drawerItemModel: items[index],
+        return GestureDetector(
+          onTap: () {
+            if (activeIndex != index) {
+              setState(() {
+                activeIndex = index;
+              });
+            }
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child: DrawerItem(
+              drawerItemModel: items[index],
+              isActive: activeIndex == index,
+            ),
           ),
         );
       },
