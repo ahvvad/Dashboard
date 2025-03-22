@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:dashboard/models/drawer_item_model.dart';
 import 'package:dashboard/widgets/active_inactive_item.dart';
 
@@ -12,10 +11,26 @@ class DrawerItem extends StatelessWidget {
 
   final DrawerItemModel drawerItemModel;
   final bool isActive;
+
   @override
   Widget build(BuildContext context) {
-    return isActive
-        ? ActiveDrawerItem(drawerItemModel: drawerItemModel)
-        : InActiveDrawerItem(drawerItemModel: drawerItemModel);
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 400),
+      transitionBuilder: (widget, animation) {
+        return FadeTransition(
+          opacity: animation,
+          child: widget,
+        );
+      },
+      child: isActive
+          ? ActiveDrawerItem(
+              key: const ValueKey('active'),
+              drawerItemModel: drawerItemModel,
+            )
+          : InActiveDrawerItem(
+              key: const ValueKey('inactive'),
+              drawerItemModel: drawerItemModel,
+            ),
+    );
   }
 }
