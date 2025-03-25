@@ -9,14 +9,13 @@ class IncomeSectionBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Expanded(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(child: IncomeChart()),
-          Expanded(flex: 2, child: IncomeDetails()),
-        ],
-      ),
+    return const Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Expanded(child: IncomeChart()),
+        Expanded(flex: 2, child: IncomeDetails()),
+        
+      ],
     );
   }
 }
