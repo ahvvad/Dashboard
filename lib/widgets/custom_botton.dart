@@ -28,9 +28,12 @@ class CustomBotton extends StatelessWidget {
           elevation: 0,
           backgroundColor: backgroundColor ?? const Color(0xFF4DB7F2),
         ),
-        child: Text(
-          title,
-          style: AppStyles.styleSemiBold18(context).copyWith(color: textColor),
+        child: FittedBox(
+          child: Text(
+            title,
+            style:
+                AppStyles.styleSemiBold18(context).copyWith(color: textColor),
+          ),
         ),
       ),
     );
