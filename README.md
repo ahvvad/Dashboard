@@ -28,6 +28,6 @@ You can find the application in the **Releases** section or by following this [l
 
 ---
 
-### Explore the UI through [this link](preview)
+### Explore the UI through [this link](assets/preview)
 
 #### **Contact me anytime if you have questions.** : [Here](https://linktr.ee/userahmed)
