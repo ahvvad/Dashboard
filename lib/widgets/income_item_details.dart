@@ -22,7 +22,7 @@ class IncomeItemDetails extends StatelessWidget {
       ),
       title: Text(
         itemDetailsModel.title,
-        style: AppStyles.styleRegular16(context),
+        style: AppStyles.styleRegular16(context).copyWith(),
       ),
       trailing: Text(
         itemDetailsModel.value,

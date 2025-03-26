@@ -31,7 +31,8 @@ class IncomeDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: items.map((e) => IncomeItemDetails(itemDetailsModel: e)).toList(),
+      children:
+          items.map((e) => IncomeItemDetails(itemDetailsModel: e)).toList(),
     );
 
     //! List View make an error with shrink wrap and custom scroll view
