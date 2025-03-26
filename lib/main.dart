@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     DevicePreview(
-      enabled: true,
+      enabled: false,
       backgroundColor: const Color(0xFF4EB7F2),
       builder: (context) => const MyApp(),
     ),
@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       title: 'Dashboard',
