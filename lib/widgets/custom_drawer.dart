@@ -1,6 +1,6 @@
 import 'package:dashboard/models/drawer_item_model.dart';
 import 'package:dashboard/models/user_info_model.dart';
-import 'package:dashboard/widgets/active_inactive_item.dart';
+import 'package:dashboard/widgets/active_inactive_drawer_item.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dashboard/utils/app_images.dart';
