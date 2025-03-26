@@ -3,7 +3,13 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(DevicePreview(enabled: true, builder: (context) => const MyApp()));
+  runApp(
+    DevicePreview(
+      enabled: true,
+      backgroundColor: const Color(0xFF4EB7F2),
+      builder: (context) => const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

@@ -38,42 +38,66 @@ class _AllExpensessItemListViewState extends State<AllExpensessItemListView> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      // children: items.map((e) => Expanded(child: AllExpenssesItem(itemModel: e))).toList(),
-      children: items.asMap().entries.map(
-        (e) {
-          int index = e.key;
-          var item = e.value;
-          if (index == 1) {
-            return Expanded(
-              child: GestureDetector(
-                onTap: () {
-                  updateIndex(index);
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
-                  child: AllExpenssesItem(
-                    itemModel: item,
-                    isSelected: selectedIndex == index,
-                  ),
-                ),
-              ),
-            );
-          } else {
-            return Expanded(
-              child: GestureDetector(
-                onTap: () {
-                  updateIndex(index);
-                },
-                child: AllExpenssesItem(
-                  itemModel: item,
-                  isSelected: selectedIndex == index,
-                ),
-              ),
-            );
-          }
-        },
-      ).toList(),
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(0);
+            },
+            child: AllExpenssesItem(
+              itemModel: items[0],
+              isSelected: selectedIndex == 0,
+            ),
+          ),
+        ),
+        const SizedBox(width: 16),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(1);
+            },
+            child: AllExpenssesItem(
+              itemModel: items[1],
+              isSelected: selectedIndex == 1,
+            ),
+          ),
+        ),
+        const SizedBox(width: 16),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(2);
+            },
+            child: AllExpenssesItem(
+              itemModel: items[2],
+              isSelected: selectedIndex == 2,
+            ),
+          ),
+        ),
+      ],
     );
+
+    //! Size issue because the padding
+    // return Row(
+    //   // children: items.map((e) => Expanded(child: AllExpenssesItem(itemModel: e))).toList(),
+    //   children: items.asMap().entries.map(
+    //     (e) {
+    //       int index = e.key;
+    //       var item = e.value;
+    //       return Expanded(
+    //         child: GestureDetector(
+    //           onTap: () {
+    //             updateIndex(index);
+    //           },
+    //           child: AllExpenssesItem(
+    //             itemModel: item,
+    //             isSelected: selectedIndex == index,
+    //           ),
+    //         ),
+    //       );
+    //     },
+    //   ).toList(),
+    // );
   }
 
   void updateIndex(int index) {
